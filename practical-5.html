@@ -6,31 +6,47 @@
     <title>Practical-5</title>
     <style>
         body{
-            background-color:lightgray;
+            background-color:rgba(43, 41, 41,0.8);
             font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
         }
         h2{
             font-size: x-large;
             color: white;
         }
+        p{
+            font-size: small;
+            color: coral;
+        }
     </style>
 </head>
 <body>
-    <img class="class1" src="img/navBarNew.png" alt="Navigation Menu">
+    <img src="img/navBarNew.png" alt="Navigation Menu" usemap="#map2">
+    <map name="map2" id="map2">
+        <area shape="rect" coords="12,15,90,34" href="index.html" alt="Homepage">
+        <area shape="rect" coords="110,15,277,33" href="practical-1.html" alt="Assignment-1">
+        <area shape="rect" coords="296,16,463,33" href="practical-2.html" alt="Assignment-2">
+        <area shape="rect" coords="476,15,646,33" href="practical-3.html" alt="Assignment-3">
+        <area shape="rect" coords="658,14,830,35" href="practical-4.html" alt="Assignment-4">
+        <area shape="rect" coords="844,15,1010,34" href="practical-5.html" alt="Assignment-5">
+        
+    </map>
 
-    <h2 class="class1">Introduction to Front-End Technologies</h3>
-    <img class="class1" src="img/fullstack.png" alt="fullstack image">
+    <h2>Introduction to Front-End Technologies</h3>
+    <img src="img/fullstack.png" alt="fullstack image" usemap="#map1">
     <map name="map1" id="map1">
-        <area shape="rect" coords="14,12,145,141" href="" alt="HTML" target="_blank"> 
+        <area shape="rect" coords="14,12,145,141" href="html.html" alt="HTML" target="_blank"> 
     
         
-        <area shape="rect" coords="184,9,348,174" href="" alt="CSS" target="_blank"> 
+        <area shape="rect" coords="184,9,348,174" href="css.html" alt="CSS" target="_blank"> 
     
         
-        <area shape="circle" coords="82,246,90" href="" alt="JavaScript" target="_blank"> 
+        <area shape="circle" coords="82,246,90" href="js.html" alt="JavaScript" target="_blank"> 
     
         
-        <area shape="rect" coords="199,190,386,375" href="" alt="BootStrap" target="_blank"> </map>
+        <area shape="rect" coords="199,190,386,375" href="bootstrap.html" alt="BootStrap" target="_blank"> 
+    </map>
+    <p>Click on any part to know more about these technologies.</p>
 
 </body>
 </html>
