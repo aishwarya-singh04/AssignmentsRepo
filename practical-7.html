@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-7</title>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+    
+        .container{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 38px;
+        }
+        #header{
+            width: 100vw;
+            height: 70px;
+            background-color: darkgray;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+        #banner{
+            
+            height: 100vh;
+            width: 100vw;
+            background-color: skyblue;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #sect1{
+            
+            width: 100vw;
+            margin-bottom: 8px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+        #c1{
+            order: 1;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: peru;
+            margin-right: 15px;
+        }
+        #c2{
+            order: 2;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: peru;
+            margin-right: 15px;
+        }
+        #c3{
+            order: 3;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: peru;
+            margin-right: 15px;
+        }
+        #c4{
+            order: 4;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: peru;
+            
+        }
+        #sect2{
+            width: 100vw;
+            height: 100vh;
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        #sect2::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #left-side{
+            order:1;
+            width: 49.5%;
+            float: left;
+            background-color: lightcoral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+
+        }
+        #right-side{
+            order: 2;
+            width: 49.5%;
+            float: right;
+            display: flex;
+            flex-direction: column;
+        }
+        #art1{
+            order: 1;
+            background-color: goldenrod;
+            height: 32.33%;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #art2{
+            order: 2;
+            background-color: goldenrod;
+            height: 32.33%;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #art3{
+            order: 3;
+            background-color: goldenrod;
+            height: 32.33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #sect3{
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 8px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #box1{
+            order: 1;
+            width: 24%;
+            height: 480px;
+            margin-right: 15px;
+            background-color:lightgreen;
+            
+        }
+        #box2{
+            order: 2;
+            width: 24%;
+            height: 480px;
+            margin-right: 15px;
+            background-color: lightgreen;
+        }
+
+        #box3{
+            order: 3;
+            width: 24%;
+            height: 480px;
+            margin-right: 15px;
+            background-color: lightgreen;
+        }
+        #box4{
+            order: 4;
+            width: 24%;
+            height: 480px;
+            background-color: lightgreen;
+        }
+        #footer{
+            width: 100vw;
+            height: 70px;
+            background-color: violet;
+            
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3{
+            text-align: center;
+            color: black;
+            font-size: xx-large;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">Header</div>
+        <div id="banner">Banner</div>
+        <h3>Section-1</h3>
+        <div id="sect1">
+            
+            <div id="c1"></div>
+            <div id="c2"></div>
+            <div id="c3"></div>
+            <div id="c4"></div>
+        </div>
+        <h3>Section-2</h3>
+        <div id="sect2">
+            
+            <div id="left-side">Main Content</div>
+            <div id="right-side">
+                <div id="art1">Article-1</div>
+                <div id="art2">Article-2</div>
+                <div id="art3">Article-3</div>
+            </div>
+        </div>
+        <h3>Section-3</h3>
+        <div id="sect3">
+            
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+            <div id="box4"></div>
+        </div>
+        <h3 style="text-align: center;">Section-4</h3>
+        <div id="footer">Footer</div>
+
+    </div>
+</body>
+</html>
