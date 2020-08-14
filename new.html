@@ -18,29 +18,68 @@
             width: auto;
             margin-left: 8px;
             margin-right: 8px;
-            
+           
         
         }
         #header{
             
-            height: 70px;
-            background-color: darkgray;
+            /*height: 70px;*/
             margin-top: 8px;
             margin-bottom: 8px;
-            display: flex;
+            /*display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center;*/
+            
             
             
         }
+        ul{
+            list-style: none;
+            background-color:  rgb(80, 78, 69);
+            padding: 10px 10px;
+            width: 97.4%;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-evenly;
+            
+            position: fixed;
+            top: 0;
+           
+            
+
+        }
+        ul li{
+            /*display: inline-block;*/
+            float: left;
+           
+
+        }
+        ul li a{
+            text-decoration: none;
+            padding: 10px 20px;
+            
+            display: block;
+            font-size: 15px;
+            color: white;
+            width: 100px;
+            text-align: center;
+        }
+        ul li a:hover{
+            background-color: white;
+            color: black;
+        }
+
         #banner{
            
             height: 100vh;
-            background-color: skyblue;
+            background-image: url(img/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+            margin-top: 40px;
             margin-bottom: 8px;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: top;
+            align-items: left;
+            padding: 10px;
+            
             
         }
         #sect1{
@@ -201,8 +240,17 @@
 </head>
 <body>
     <div class="container">
-        <div id="header">Header</div>
-        <div id="banner">Banner</div>
+        <div id="header">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">TECHNOLOGIES</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+
+        </div>
+        <div id="banner">PRACTICAL-8</div>
         <h3>Section-1</h3>
         <div id="sect1">
             

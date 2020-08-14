@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-8</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            width: 100vw;
+           
+            
+        }
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        #container{
+           
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+       
+    
+            
+        
+        #navbar ul{
+            list-style: none;
+            background-color:  rgb(80, 78, 69);
+            padding: 10px 10px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-evenly;
+            
+            position: fixed;
+            top: 0;
+           
+            
+
+        }
+        ul li{
+            /*display: inline-block;*/
+            float: left;
+           
+
+        }
+        ul li a{
+            text-decoration: none;
+            padding: 10px 20px;
+            
+            display: block;
+            font-size: 15px;
+            color: white;
+            width: 100px;
+            text-align: center;
+        }
+        ul li a:hover{
+            background-color: white;
+            color: black;
+        }
+
+        #image{
+           width: 640px;
+            position: relative;
+            margin-top: 80px;
+            color: white;
+            
+            
+
+        }
+        #text{
+            position: absolute;
+            top: 80px;
+            left: 8px;
+        }
+        #team{
+            
+            margin-top: 10px;
+            margin-bottom: 8px;
+            margin-left: 45px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+        #c1 img{
+            order: 1;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            
+            margin-right: 10px;
+        }
+        #c2 img{ 
+            order: 2;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            
+            margin-right: 10px;
+        }
+        #c3 img{
+            order: 3;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            
+            margin-right: 10px;
+        }
+        #c4 img{
+            order: 4;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+           
+        }
+        #sect2{
+            width: auto;
+            height: 100vh;
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #sect2::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #left-side{
+            order:1;
+            width: 49.5%;
+            float: left;
+            background-color: grey;
+            color: white;
+            padding: 5px;
+            /*display: flex;
+            justify-content: center;
+            align-items: center;*/
+            margin-right: 15px;
+
+        }
+        #right-side{
+            order: 2;
+            width: 49.5%;
+            float: right;
+            display: flex;
+            flex-direction: column;
+        }
+        #art1{
+            order: 1;
+            background-color: goldenrod;
+            height: 32.33%;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #art2{
+            order: 2;
+            background-color: goldenrod;
+            height: 32.33%;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #art3{
+            order: 3;
+            background-color: goldenrod;
+            height: 32.33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="navbar">
+    <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">TEAM</a></li>
+        <li><a href="#">TECHNOLOGIES</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</div>
+    <div id="image">
+        <h1 id="text">PRACTICAL-8</h1>
+        <img src="img/emile-perron-xrVDYZRGdw4-unsplash.jpg" alt="_blank">
+    </div>
+    
+    <div><h1 style="text-align: center; margin-top: 60px;" >Team Members</h1></div>
+    <div id="team">
+        
+        <div id="c1"><img src="img/1.png" alt="_blank"></div>
+        <div id="c2"><img src="img/2.png" alt="_blank"></div>
+        <div id="c3"><img src="img/9.png" alt="_blank"></div>
+        <div id="c4"><img src="img/3.png" alt="_blank"></div>
+    </div>
+    <div><h1 style="text-align: center; margin-top: 60px;" >Team Members</h1></div>
+
+    <div id="sect2">
+            
+        <div id="left-side">
+            <h3>About Projects</h3>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, praesentium. Officiis non porro consequuntur inventore eveniet? Architecto quidem ut delectus. Fugit dolorum cum ipsum ipsa praesentium sed tempore facilis placeat aspernatur nihil inventore deserunt quae velit quasi, quaerat autem. Dolore harum deleniti odit in nam consequatur voluptates cumque saepe! Facilis eum odit hic exercitationem, deleniti officia. Inventore iure aperiam cum et vel temporibus harum enim recusandae deserunt saepe, repellat adipisci laborum beatae molestiae vero optio! Praesentium omnis, doloribus sit distinctio illum vero atque laboriosam, accusamus non magnam deleniti? Nobis accusamus ea beatae minus laboriosam quis tempore hic quae officia repudiandae.</p>
+        </div>
+        <div id="right-side">
+            <div id="art1">Article-1</div>
+            <div id="art2">Article-2</div>
+            <div id="art3">Article-3</div>
+        </div>
+    </div>
+
+   
+
+</div>
+</body>
+</html>
