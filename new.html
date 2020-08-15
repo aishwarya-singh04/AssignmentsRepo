@@ -21,29 +21,29 @@
            
         
         }
-        #header{
+        /*#header{
             
-            /*height: 70px;*/
+            /*height: 70px;
             margin-top: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
             
             
             
-        }
+        }*/
         ul{
             list-style: none;
             background-color:  rgb(80, 78, 69);
             padding: 10px 10px;
             width: 97.4%;
-            overflow: hidden;
+           /* overflow: hidden;*/
             display: flex;
             justify-content: space-evenly;
             
             position: fixed;
-            top: 0;
+            margin-top: -40px;
            
             
 
@@ -73,12 +73,15 @@
            
             height: 100vh;
             background-image: url(img/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
             margin-top: 40px;
             margin-bottom: 8px;
             display: flex;
             justify-content: top;
             align-items: left;
-            padding: 10px;
+            padding: 20px;
             
             
         }
@@ -162,12 +165,10 @@
            
             height: 32.33%;
             margin-bottom: 15px;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
             text-align: center;
+            padding: 2px;
             color: black;
-            font-size: 30px;
+            font-size: 25px;
             font-weight: bold;
 
         }
@@ -176,12 +177,10 @@
             background-image: url(img/p2.jpeg);
             height: 32.33%;
             margin-bottom: 15px;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
             text-align: center;
+            padding: 2px;
             color: black;
-            font-size: 30px;
+            font-size: 25px;
             font-weight: bold;
 
         }
@@ -189,53 +188,14 @@
             order: 3;
             background-image: url(img/p3.jpg);
             height: 32.33%;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
             text-align: center;
+            padding: 2px;
             color: black;
-            font-size: 30px;
+            font-size: 25px;
             font-weight: bold;
         }
 
-        /*#sect3{
-            
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 8px;
-            justify-content: center;
-            align-items: center;
-
-        }
-        #box1{
-            order: 1;
-            width: 300px;
-            height: 480px;
-            margin-right: 15px;
-            background-color:lightgreen;
-            
-        }
-        #box2{
-            order: 2;
-            width: 300px;
-            height: 480px;
-            margin-right: 15px;
-            background-color: lightgreen;
-        }
-
-        #box3{
-            order: 3;
-            width: 300px;
-            height: 480px;
-            margin-right: 15px;
-            background-color: lightgreen;
-        }
-        #box4{
-            order: 4;
-            width: 300px;
-            height: 480px;
-            background-color: lightgreen;
-        }*/
+       
 
 
         .card a{
@@ -267,7 +227,8 @@
             float: left;
             margin: 20px 15px;
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-            margin-bottom: 80px;
+            margin-bottom: 100px;
+            margin-top: -15px;
            
         
             }
@@ -282,11 +243,6 @@
             
         }
 
-        /*.card h3{
-            text-align: center;
-            font-weight: bold;
-            
-        }*/
         .card img{
             width: 100%;
             height: 180px;
@@ -304,7 +260,7 @@
         div h3{
             color: black;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 100px;
         }
 
         #footer{
@@ -322,18 +278,25 @@
     </style>
 </head>
 <body>
+
     <div class="container">
+        <a name="top"></a>
         <div id="header">
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">TEAM</a></li>
-                <li><a href="#">TECHNOLOGIES</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#section1">HOME</a></li>
+                <li><a href="#section2">ABOUT US</a></li>
+                <li><a href="#section3">TEAM</a></li>
+                <li><a href="#section4">TECHNOLOGIES</a></li>
+                <li><a href="#section5">CONTACT</a></li>
             </ul>
 
         </div>
+       
+        <a name="section1"></a>
         <div id="banner">PRACTICAL-8</div>
+
+        
+        <a name="section3"></a>
         <h3>Team Members</h3>
         <div id="sect1">
             
@@ -343,6 +306,7 @@
             <div id="c4"><img src="img/9.png" alt="_blank"></div>
         </div>
         <h3>About Us</h3>
+        <a name="section2"></a>
         <div id="sect2">
             
             <div id="left-side">
@@ -359,14 +323,9 @@
             </div>
         </div>
         
-        <!--<div id="sect3">
-            
-            <div id="box1"></div>
-            <div id="box2"></div>
-            <div id="box3"></div>
-            <div id="box4"></div>
-        </div>-->
+        <a name="section4"></a>
         <h3>Technologies Used</h3>
+        
         <div id="sec3">
         <div class="card">
             <img src="img/html.jpg" alt="HTML">
@@ -400,17 +359,16 @@
         </div>
     </div>
 
+    
     <h3>Contact</h3>
+    <a name="section5"></a>
     <footer>
         
         <div id="footer">Website Template for Practical-8 @ <a href="www.beta-labs.in">Beta-labs</a>
         <br>
-        <a href="" style="text-align: center; font-size: small; float: left;">Back to top</a></div>
+        <a href="#top" style="text-align: center; font-size: small; float: left;">Back to top</a></div>
         
-        
-   
-    
-</footer>
-    </div>
+    </footer>
+</div>
 </body>
 </html>
