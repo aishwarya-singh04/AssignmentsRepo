@@ -1,442 +1,1034 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical-8</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Practical-9</title>
 
-    <style>
-        body{
-            margin: 0px;
-            padding: 0px;
-        }
-    
-        .container{
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-            font-size: 38px;
-            width: auto;
-            margin-left: 8px;
-            margin-right: 8px;
-           
-        
-        }
-        #header{
-            
-            height: 110px;
-            margin-top: 8px;
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-           
-        }
-        ul{
-            list-style: none;
-            background-color:  rgb(80, 78, 69);
-            padding: 10px 10px;
-            width: 97.3%;
-            display: flex;
-            justify-content: space-evenly;
-            position: fixed;
-            margin-top: -40px;
-            /*text-align: center;*/
-        }
-        ul li{
-            float: left;
-            text-align: center;
+  <style>
+    /* Reset all Margins & Padding */
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* 
+      --Resolve Position Fixed Issue-- 
+                      & 
+        ----------Smooth Scroll ------ 
+      */
+
+    html {
+      scroll-padding-top: 70px;
+      scroll-behavior: smooth;
+    }
+
+    #container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ------Header Container-------- */
+
+    #header {
+      background-color: grey;
+      width: 100%;
+      height: 70px;
+      max-width: 1200px;
+      position: fixed;
+      top: 0;
+      height: 70px;
+    }
+
+    /* Navigation Menu  */
+    .menu {
+      list-style: none;
+      float: right;
+      padding: 0 20px;
+    }
+
+    .menu li {
+      display: inline-block;
+      line-height: 70px;
+    }
+
+    .menu li a {
+      transition: 0.4s;
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 0px 20px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    .menu li a:hover {
+      color: black;
+      background-color: white;
+    }
+
+    .show-btn,
+    .hide-btn,
+    #chk {
+      font-size: 30px;
+      line-height: 70px;
+      color: white;
+      display: none;
+      float: right;
+      padding-right: 20px;
+    }
+
+    /* ------------------Banner ------------- */
+
+    #banner {
+      width: 100%;
+      margin-top: 90px;
+      height: 680px;
+      margin-bottom: 15px;
+      display: flex;
+      font-size: 40px;
+      color: white;
+    }
+
+    #banner {
+      background-image: url(img/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    #banner h2 {
+      margin: 20px 20px;
+      color: #fff;
+    }
+
+    /* ------- Team Members ----- */
+
+    #circle-container {
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    #circle-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .circle img {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      background-color: goldenrod;
+      float: left;
+      margin-left: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    /* -------------About Us-------------- */
+    #sec2-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    #left-side {
+      width: 50%;
+      height: 550px;
+      background-color: gray;
+      float: left;
+      color: #fff;
+    }
+
+    #left-p>h2 {
+      text-align: left;
+      margin: 10px 5px;
+    }
+
+    #left-p>p {
+      font-size: 20px;
+      padding: 10px;
+      text-align: justify;
+      line-height: 28px;
+    }
+
+    #right-side {
+      width: 48%;
+      height: 550px;
+      float: right;
+    }
+
+    .artical {
+      height: 31%;
+      margin-bottom: 20px;
+      background-color: chocolate;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      overflow: hidden;
+    }
+
+    #p1 {
+      background-image: url(img/p1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #p2 {
+      background-image: url(img/p2.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #p3 {
+      background-image: url(img/p3.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /* --------- Technologies Used------------ */
+    #grid-container {
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    #grid-container::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .grid {
+      width: 20%;
+      float: left;
+      margin-left: 50px;
+      background-color: lightgrey;
+      border-radius: 8px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid>img {
+      width: 100%;
+      margin-bottom: 10px;
+      height: 120px;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    .grid>h4 {
+      margin: 0px 10px;
+      text-align: center;
+    }
+
+    .grid>p {
+      margin: 10px;
+      font-size: 15px;
+      text-align: justify;
+      line-height: 25px;
+      color: white;
+    }
+
+    .grid>a {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+      background-color: teal;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      color: black;
+      font-size: 40px;
+      text-align: center;
+      padding: 25px 0px;
+    }
+
+    .grid>a:hover {
+      background-color: blue;
+    }
+
+    /* -------Footer Section ------- */
+    #footer {
+      background-color: plum;
+      height: 100px;
+    }
+
+    #footer>p {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* 1. First Break-point */
+    /* 801px - 1199px */
+
+    @media (min-width: 801px) and (max-width: 1199px) {
+      .menu {
+        list-style: none;
+        float: right;
+      }
+
+      .menu li {
+        line-height: 70px;
+        display: inline-block;
+      }
+
+      .menu li a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 0px 20px;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      .menu li a:hover {
+        color: black;
+        background-color: white;
+      }
+
+      html {
+        scroll-padding-top: 70px;
+        scroll-behavior: smooth;
+      }
+
+      #container {
+        width: 100%;
+      }
+
+      .show-btn,
+      .hide-btn,
+      #chk {
+        font-size: 30px;
+        line-height: 70px;
+        color: white;
+        display: none;
+        float: right;
+        padding-right: 20px;
+      }
+
+      /* ------Header Container-------- */
+
+      #header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      /* ------------------Banner ------------- */
+
+      #banner {
+        width: 100%;
+        margin-top: 90px;
+        height: 680px;
+        margin-bottom: 15px;
+        display: flex;
+        font-size: 40px;
+        color: white;
+      }
+
+      #banner {
+        background-image: url(img/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      #banner h2 {
+        margin: 20px 20px;
+        color: #fff;
+      }
+
+      /* ------- Team Members ----- */
+
+      #circle-container {
+        width: 100%;
+      }
+
+      #circle-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        float: left;
+        margin-left: 15%;
+        margin-bottom: 20px;
+      }
+
+      /* -------------About Us-------------- */
+
+      #sec2-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      #left-side {
+        width: 50%;
+        height: 550px;
+        background-color: gray;
+        float: left;
+        color: #fff;
+      }
+
+      #left-p>h2 {
+        text-align: left;
+        margin: 10px 5px;
+      }
+
+      #left-p>p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+        line-height: 28px;
+      }
+
+      #right-side {
+        width: 48%;
+        height: 550px;
+        float: right;
+      }
+
+      .artical {
+        height: 31%;
+        margin-bottom: 20px;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        overflow: hidden;
+      }
+
+      #p1 {
+        background-image: url(img/p1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p2 {
+        background-image: url(img/p2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p3 {
+        background-image: url(img/p3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      /* --------- Technologies Used------------ */
+      #grid-container {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #grid-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .grid {
+        width: 40%;
+        float: left;
+        margin-left: 65px;
+        margin-bottom: 20px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .grid>img {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 20px;
+      }
+
+      .grid>h4 {
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .grid>p {
+        margin: 10px;
+        font-size: 20px;
+        text-align: justify;
+        line-height: 30px;
+        color: white;
+      }
+
+      .grid>a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+      .grid>a:hover {
+        background-color: blue;
+      }
+
+      /* -------Footer Section ------- */
+      #footer {
+        background-color: plum;
+        height: 100px;
+      }
+
+      #footer>p {
+        font-size: 16px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+
+    /* 2. Second Break-point */
+
+    @media (max-width: 800px) {
+      #header {
+        width: 100%;
+        background-color: grey;
+        position: fixed;
+        top: 0;
+        height: 70px;
+      }
+
+      .show-btn {
+        display: block;
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 80px 0px;
+        line-height: normal;
+        transition: 0.7s;
+      }
+
+      .menu li {
+        display: block;
+      }
+
+      .manu li a {
+        display: block;
+      }
+
+      #chk:checked~.menu {
+        right: 0;
+      }
+
+      .hide-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+      }
+
+      #banner {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 15px;
+        display: flex;
+        font-size: 30px;
+        color: white;
+        margin-top: 90px;
+      }
+
+      #banner h2 {
+        margin: 10px 20px;
+        color: #fff;
+      }
+
+      #circle-container {
+        width: 100%;
+      }
+
+      #circle-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .circle img {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 10%;
+        margin-bottom: 20px;
+      }
+
+      #left-side {
+        width: 100%;
+        height: 200px;
+        background-color: gray;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      #left-p>h2 {
+        text-align: left;
+        margin: 5px 5px;
+      }
+
+      #left-p>p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: justify;
+        line-height: 28px;
+      }
+
+      #right-side {
+        width: 100%;
+        height: 400px;
+      }
+
+      .artical {
+        height: 31%;
+        margin-bottom: 20px;
+        background-color: chocolate;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        overflow: hidden;
+      }
+
+      #p1 {
+        background-image: url(img/p1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p2 {
+        background-image: url(img/p2.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #p3 {
+        background-image: url(img/p3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #grid-container {
+        width: 100%;
+        margin: 15px auto;
+      }
+
+      #grid-container::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .grid {
+        width: 40%;
+        float: left;
+        margin-left: 50px;
+        background-color: lightgrey;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .grid>img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .grid>h4 {
+        margin: 0px 10px;
+        text-align: center;
+      }
+
+      .grid>p {
+        margin: 10px;
+        font-size: 15px;
+        text-align: justify;
+        line-height: 25px;
+        color: white;
+      }
+
+      .grid>a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding: 25px 0px;
+      }
+
+      /* 3. Third Break-point */
+
+      @media (max-width: 625px) {
+        /* Set container to min-width of 320px */
+
+        #container {
+          min-width: 320px;
         }
 
-        html{
-            scroll-padding-block: 110px;
-
-             /*Smooth -Scrolling*/
-            scroll-behavior: smooth;
-        }
-      
-        
-
-        ul li a{
-            text-decoration: none;
-            padding: 10px 20px;
-            
-            display: block;
-            font-size: 15px;
-            color: white;
-            width: 100px;
-            text-align: center;
-        }
-        ul li a:hover{
-            background-color: white;
-            color: black;
+        .show-btn {
+          display: block;
         }
 
-        #banner{
-           
-            height: 100vh;
-            background-image: url(img/emile-perron-xrVDYZRGdw4-unsplash.jpg);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            margin-top: -60px;
-           
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: top;
-            align-items: left;
-            padding: 20px;
-            
-            
-        }
-        #sect1{
-            margin-bottom: 8px;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: row;
-        }
-        #c1 img{
-            order: 1;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-           
-            margin-right: 15px;
-        }
-        #c2 img{
-            order: 2;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-           
-            margin-right: 15px;
-        }
-        #c3 img{
-            order: 3;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            
-            margin-right: 15px;
-        }
-        #c4 img{
-            order: 4;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-           
-            
-        }
-        #sect2{
-            
-            height: 100vh;
-            margin-bottom: 8px;
-            display: flex;
-            flex-direction: row;
-        }
-        
-        #sect2::after{
-            content: '';
-            display: block;
-            clear: both;
+        .menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          background-color: #333;
+          text-align: center;
+          padding: 80px 0px;
+          line-height: normal;
+          transition: 0.7s;
         }
 
-        #left-side{
-            order:1;
-            width: 49.5%;
-            float: left;
-            background-color: grey;
-            margin-right: 15px;
-            /*display: flex;
-            justify-content: top;
-            align-items: left;*/
-        }
-        #right-side{
-            order: 2;
-            width: 49.5%;
-            float: right;
-            display: flex;
-            flex-direction: column;
-        }
-        #art1{
-            order: 1;
-            background-image: url(img/p1.jpg);
-            
-           
-            height: 32.33%;
-            margin-bottom: 15px;
-            text-align: center;
-            padding: 2px;
-            color: black;
-            font-size: 25px;
-            font-weight: bold;
-
-        }
-        #art2{
-            order: 2;
-            background-image: url(img/p2.jpeg);
-            height: 32.33%;
-            margin-bottom: 15px;
-            text-align: center;
-            padding: 2px;
-            color: black;
-            font-size: 25px;
-            font-weight: bold;
-
-        }
-        #art3{
-            order: 3;
-            background-image: url(img/p3.jpg);
-            height: 32.33%;
-            text-align: center;
-            padding: 2px;
-            color: black;
-            font-size: 25px;
-            font-weight: bold;
-        }
-        .card a{
-            display: block;
-            padding: 10px;
-            margin-top: 10px;
-            text-decoration: none;
-            text-align: center;
-            background-color: teal;
-            color: white;
-            border-radius: 8px;
-            font-weight: medium;
-            align-items: baseline;
-            font-size: 20px;
-            
+        .menu li {
+          display: block;
         }
 
-        .card a:hover{
-            background-color: tomato;
-        }
-        
-        
-        
-        .card{
-            width: 20%;
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            float: left;
-            margin: 20px 15px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-            margin-bottom: 100px;
-            margin-top: -15px;
-        }
-        
-        .card p{
-            
-            text-align: justify;
-            margin: 10px;
-            font-size: 16px;
-            line-height: 22px;
-            color: black;
-            
+        .manu li a {
+          display: block;
         }
 
-        .card img{
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-        }
-        .card h3{
-            text-align: center;
-            color: black;
-            font-size: large;
-            margin-top: 20px;
-        }
-        div h3{
-            color: black;
-            text-align: center;
-            margin-top: 100px;
+        #chk:checked~.menu {
+          right: 0;
         }
 
-        #footer{
-            
-            height: 70px;
-            background-color: hotpink;
-            /*margin-top: -20px;*/
-            margin-bottom: 8px;
-            /*display: flex;
-            justify-content: center;
-            align-items: center;*/
-            font-size: small;
-        }
-       
-        #check{
-            position: absolute;
-         
-            visibility: hidden;
-            z-index: -10;
-        }
-        .show-btn, .hide-btn{
-            display: hidden;
-        }
-        
-        @media(min-width: 801px) and (max-width:1199px){
-           
-            .show-btn, .hide-btn{
-            display: block;
-            font-size: 30px;
-            color: black;
-            line-height: 110px;
-            transition: .4s;
-            position: fixed;
-            right: 20px;
-            top: 2px;
-        }
-        .header{
-            position: fixed;
-            top: 70px;
-            left: -100%;          /*slider-effect*/
-            width: 20%;
-            height: 100%;
-            background-color:#333;
-            text-align: left;
-            /*padding: 10px 0px;*/
-            transition: .7s;
-            line-height: normal;
-        }
-            
-        .header li{
-            display: block;
-            line-height: 60px;
-            border-bottom: 1px solid grey;
-           
-        }
-        .header li a{
-            display: block;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            text-transform: uppercase;
-            padding: 0px 20px;
-            transition: .4s;
-        }
-        #check:checked ~ .header{
-            left: 0;
-        }
-        #check:checked ~ .show-btn{
-            opacity: 0;
-        }
-        #check:checked ~ .hide-btn{
-            opacity: 1;
-        }
-        .hide-btn{
-             position: absolute;
-             left: 20px;
-             top: 2px;
-             opacity: 0;
-        }
+        .hide-btn {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px;
         }
 
-    </style>
+        #banner {
+          width: 100%;
+          height: 250px;
+          margin-bottom: 15px;
+          color: white;
+          margin-top: 90px;
+        }
+
+        #banner h2 {
+          margin: 10px 20px;
+          color: #fff;
+          font-size: 20px;
+        }
+
+        #circle-container {
+          width: 90%;
+          margin-left: 10%;
+        }
+
+        .circle img {
+          height: 70%;
+          width: 70%;
+
+          border-radius: 50%;
+          margin-bottom: 20px;
+        }
+
+        #left-side {
+          width: 100%;
+          height: 200px;
+          background-color: gray;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+
+        #left-p>h2 {
+          text-align: left;
+          margin: 5px 5px;
+        }
+
+        #left-p>p {
+          font-size: 20px;
+          padding: 10px;
+          text-align: justify;
+          line-height: 28px;
+        }
+
+        #right-side {
+          width: 100%;
+          height: 400px;
+        }
+
+        .artical {
+          box-sizing: border-box;
+          height: 31%;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+          font-size: 16px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: black;
+          overflow: hidden;
+        }
+
+        #p1 {
+          background-image: url(img/p1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #p2 {
+          background-image: url(img/p2.jpeg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #p3 {
+          background-image: url(img/p3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        #grid-container {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .grid {
+          margin-left: 20px;
+          width: 90%;
+          background-color: lightgrey;
+          border-radius: 8px;
+          margin-bottom: 20px;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+          max-height: 500px;
+        }
+
+        .grid>img {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 20px;
+        }
+
+        .grid>h4 {
+          margin: 0px 10px;
+          text-align: center;
+        }
+
+        .grid>p {
+          margin: 10px;
+          font-size: 15px;
+          text-align: justify;
+          line-height: 25px;
+          color: white;
+        }
+
+        .grid>a {
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+          color: #fff;
+          background-color: red;
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 8px;
+        }
+
+        h1 {
+          color: black;
+          font-size: 20px;
+          text-align: center;
+          padding-top: 25px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div id="container">
+    <div id="header">
+      <input type="checkbox" id="chk" />
+      <label for="chk" class="show-btn">
+        <i class="fa fa-bars"></i>
+      </label>
+      <ul class="menu">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#circle-container">Team</a></li>
+        <li><a href="#Technologies">Technologies</a></li>
+        <li><a href="#contact">contact</a></li>
 
-    <div class="container">
-        <a name="top"></a>
-        <input type="checkbox" id="check">
-        <label for="check" class="show-btn">
-            <i class="fa fa-bars" ></i>
+        <label for="chk" class="hide-btn">
+          <i class="fa fa-times"></i>
         </label>
-        <label for="check" class="hide-btn">
-                
-            <i class="fa fa-times"></i>
-        </label>
-        <div id="header">
-            <ul>
-                <li><a href="#section1">HOME</a></li>
-                <li><a href="#section2">ABOUT US</a></li>
-                <li><a href="#section3">TEAM</a></li>
-                <li><a href="#section4">TECHNOLOGIES</a></li>
-                <li><a href="#section5">CONTACT</a></li>
-            </ul>
-
-        </div>
-       
-        <a name="section1"></a>
-        <div id="banner">PRACTICAL-8</div>
-
-        
-        <a name="section3"></a>
-        <h3>Team Members</h3>
-        <div id="sect1">
-            
-            <div id="c1"><img src="img/1.png" alt="_blank"></div>
-            <div id="c2"><img src="img/2.png" alt="_blank"></div>
-            <div id="c3"><img src="img/3.png" alt="_blank"></div>
-            <div id="c4"><img src="img/9.png" alt="_blank"></div>
-        </div>
-        <h3>About Us</h3>
-        <a name="section2"></a>
-        <div id="sect2">
-            
-            <div id="left-side">
-                <p style="text-align: left; padding: 8px; color: white;">About Projects</p>
-                    
-                    <p style=" font-size: small; padding: 8px; text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores iure quidem excepturi accusamus repellendus necessitatibus placeat, sit quibusdam, doloremque explicabo perferendis eligendi autem atque voluptas corrupti laborum eaque unde! Repudiandae, aspernatur voluptas itaque sit ut delectus unde, pariatur fuga perferendis nihil ab eos recusandae temporibus ipsum consequatur suscipit, alias sed dolorem labore nisi rerum nam harum enim? Quae earum aut laborum repellat explicabo, illum saepe sequi! Laborum itaque doloribus, cupiditate nesciunt animi veniam deserunt sint at libero dolor molestias facilis saepe aperiam ducimus eos tenetur iste soluta asperiores neque. Consequatur doloribus sint molestiae dolore omnis nobis at voluptas voluptates nesciunt. Dignissimos, recusandae ducimus. Maiores saepe temporibus fugit natus autem quidem harum consectetur voluptatum itaque neque, hic quam accusamus officia dolorem fuga. Rerum excepturi, quidem necessitatibus fugiat quasi voluptatem sunt! Ad, odio modi. Vitae autem voluptatem quibusdam odit id ipsam architecto cupiditate officia tenetur voluptas veniam saepe, quas eligendi minus, alias amet laborum rem iusto recusandae illo sit! At, delectus facere, odit quo, beatae doloremque veniam reiciendis rem repellendus corrupti eaque voluptatem facilis molestias quaerat? Pariatur sint harum adipisci nemo qui, necessitatibus, possimus in quia velit illum obcaecati laudantium dolores fugiat voluptate laborum officia expedita! Ratione molestias harum voluptatem error dignissimos explicabo consectetur? Accusantium perferendis labore corrupti blanditiis quaerat doloribus. Debitis aut repudiandae architecto maxime? In obcaecati, quis tenetur dolores quaerat facilis deserunt iure nostrum ex accusamus beatae veniam voluptatibus, perferendis ratione voluptates cumque sed adipisci suscipit quibusdam! Commodi, veniam blanditiis illo repudiandae, id, autem nesciunt illum placeat vel voluptatibus quos.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt ipsum excepturi commodi vel sed consequatur mollitia placeat delectus saepe nemo quo esse tempore ab sapiente illo minus nesciunt repellendus iure, beatae voluptate ipsa debitis? Neque aut dicta nobis doloremque sed a, suscipit blanditiis nihil? Obcaecati fuga non veniam recusandae id ducimus officia temporibus maiores. Nesciunt eveniet et adipisci, recusandae praesentium ipsum enim nobis quo repellat nulla tenetur accusamus voluptates sit possimus repellendus neque laborum aut ab vero fugit quibusdam eum expedita quisquam consectetur! Saepe, recusandae odio voluptatum dolorum quaerat temporibus corrupti qui nam expedita voluptate ad iusto asperiores! Esse, fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quibusdam quidem, temporibus id ea illo esse cumque asperiores autem nam, eaque, facilis aperiam voluptates ipsum pariatur necessitatibus eum accusamus magni tempore obcaecati placeat consequatur? Distinctio ratione odio placeat accusamus nesciunt aliquid eius, ducimus eligendi dignissimos enim! Dolor, tempora? Magni, dolor?</p>
-                        
-            </div>
-            <div id="right-side">
-                <div id="art1" >Project-1</div>
-                <div id="art2">Project-2</div>
-                <div id="art3">Project-3</div>
-            </div>
-        </div>
-        
-        <a name="section4"></a>
-        <h3>Technologies Used</h3>
-        
-        <div id="sec3">
-        <div class="card">
-            <img src="img/html.jpg" alt="HTML">
-            <h3>Introduction to HTML</h3>
-            <p>HTML stands for Hypertext Markup Language, and it is the most widely used language to write Web Pages. Hypertext refers to the way in which Web pages (HTML documents) are linked together.</p>
-            <a href="html.html">Read More</a>
-        </div>
-    
-        <div class="card">
-            <img src="img/css.png" alt="CSS">
-            <h3>Introduction to CSS</h3>
-            <p>CSS is short for Cascading Style Sheets, and is the preferred way for setting the look and feel of a website. Cascading Style Sheets (CSS) is a markup language responsible for how your web pages will look like.</p>
-            <a href="css.html">Read More</a>
-        </div>
-    
-        <div class="card">
-            <img src="img/javascript.png" alt="JS">
-            <h3>Introduction to JavaScript</h3>
-            <p>JavaScript was initially created to “make web pages alive”.
-                The programs in this language are called scripts. They can be written right in a web page’s HTML and run automatically as the page loads.</p>
-            
-                <a href="js.html">Read More</a>
-        </div>
-    
-        <div class="card">
-            <img src="img/bootstrap.png" alt="BOOTSTRAP">
-            <h3>Introduction to Bootstrap</h3>
-            <p>Bootstrap is a free and open-source tool collection for creating responsive websites and web applications. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first web sites. </p>
-            
-            <a href="bootstrap.html">Read More</a>
-        </div>
+      </ul>
     </div>
+    <a name="top"></a>
 
-    
-    <h3>Contact</h3>
-    <a name="section5"></a>
-   
+    <div id="banner">
+      <h2>PRACTICAL - 9</h2>
+    </div>
+    <div id="circle-container">
+      <h1>Team Members</h1>
+      <div class="circle">
+        <img src="img/1.png" alt="" />
+      </div>
+      <div class="circle">
+        <img src="img/2.png" alt="" />
+      </div>
+      <div class="circle">
+        <img src="img/3.png" alt="" />
+      </div>
+      <div class="circle">
+        <img src="img/9.png" alt="" />
+      </div>
+    </div>
+    <div id="sec2-container">
+      <a name="about"></a>
+      <h1>About Us</h1>
+      <div id="left-side">
+        <div class="left-content">
+          <div id="left-p">
+            <h2>About Projects</h2>
+            <p>
+              temporibus similique sit tenetur quasi exercitationem! Repellat
+              obcaecati quibusdam iste explicabo laborum veritatis velit
+              accusantium animi dolorum nemo ut quam, quo cum in suscipit
+              fugiat minima corrupti voluptates tempora alias aspernatur esse
+              dolore iure? Libero iste quo nam sequi nulla, minima architecto
+              est cum expedita omnis enim culpa reiciendis nesciunt quod
+              deserunt, nostrum corporis tempore impedit veritatis ut
+              perspiciatis rerum. Amet, harum pariatur. Quo dolorum
+              necessitatibus eos beatae eveniet, earum cum blanditiis,
+              accusamus vitae, nisi voluptas dignissimos modi quibusdam aut
+              veniam deserunt accusantium possimus atque? Distinctio voluptas
+              nemo, fuga laboriosam perspiciatis eum debitis nesciunt quidem
+              iure ratione! Eaque ea eum maxime temporibus dolor nostrum, iure
+              enim, vero in atque quod animi! Mollitia alias magnam nisi
+              suscipit ab ducimus dolores provident. Distinctio veritatis
+              quaerat explicabo fuga neque culpa facere suscipit vel, totam
+              quasi!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="right-side">
+        <div class="artical" id="p1">
+          <h2>Project-1</h2>
+        </div>
+        <div class="artical" id="p2">
+          <h2>Project-2</h2>
+        </div>
+        <div class="artical" id="p3">
+          <h2>Project-3</h2>
+        </div>
+      </div>
+    </div>
+    <div id="grid-container">
+      <a name="Technologies"></a>
+      <h1>Technologies Used</h1>
+      <div class="grid">
+        <img src="img/html.jpg" alt="_blank" />
+        <h4>Introduction to HTML</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="html.html">Read More</a>
+      </div>
+      <div class="grid">
+        <img src="img/css.png" alt="_blank" />
+        <h4>Introduction to CSS</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="css.html">Read More</a>
+      </div>
+      <div class="grid">
+        <img src="img/javascript.png" alt="" />
+        <h4>Introduction to JavaScript</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="js.html">Read More</a>
+      </div>
+      <div class="grid">
+        <img src="img/bootstrap.png" alt="" />
+        <h4>Introduction to Bootstrap</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit,
+          illum odio! Aperiam esse quia blanditiis quasi? Cum itaque
+          recusandae consequuntur!
+        </p>
+
+        <a href="bootstrap.html">Read More</a>
+      </div>
+    </div>
+    <a name="contact"></a>
+    <h1>Contact</h1>
     <div id="footer">
-        <div style="text-align: center; font-size: small; padding: 10px;">
-        Website Template for Practical-8 ©  <a href="https://www.beta-labs.in/">Beta-labs</a></div>
-        
-       <div style="text-align: center; font-size: small;"><a href="#top" >Back to top</a></div>
+      <p>
+        Website Template for Practical-9 &copy;
+        <a href="https://beta-labs.in">Beta-labs</a><br /><br />
+        <a href="#top">Back to top</a>
+      </p>
     </div>
-    
-</div>
+  </div>
 </body>
+
 </html>
