@@ -20,20 +20,41 @@
             
             border: 2px solid #00334e;
             border-bottom: 2px solid #00334e;
+            /*border-radius: 10px;*/
+            border-collapse: collapse;
+            border-radius: 10px;
+            
+            
         }
         
         tr:first-child th{
             background-color: #00334e;
             color: white;
             text-align: center;
+            /*border-top-left-radius: 10px;
+            border-top-right-radius: 10px;*/
+            
+        }
+        tr:last-child td:first-child{
+            border-bottom-left-radius: 10px;
+            
+        }
+        tr:last-child td:last-child{
+            border-bottom-right-radius: 10px;
+            
         }
        
         tr .status{
             color:#81b214;
         }
-        tr .practical-no{
+        tr .practical-no a{
+            text-decoration: none;
             color: grey;
         }
+        tr .practical-no a:hover{
+            color: black;
+        }
+        
         tr td i{
             color: #a4b494;
             font-size: 30px;
@@ -54,15 +75,20 @@
             /*border-spacing: 0px;*/
             border-collapse: collapse;
             padding: 8px;
+           
+            
         }
         tr:hover{
             background-color: #ddd0d0a6;
            
             transition: .4s;
         }
-        tr:hover .fa-pencil{
+        .fa-pencil:hover{
             color: #00334e;
             
+        }
+        .fa-trash:hover{
+            color: red;
         }
         tr 
         {
@@ -89,83 +115,84 @@
         <tr>
             <td class="no">1</td>
             <td>Create a web page including HTML basic skeleton using Offline HTML Editor and Online Sandbox Environment</td>
-            <td class="practical-no">Practical-1</td>
+            <td class="practical-no"><a href="practical-1.html"> Practical-1</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></i></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></td></acronym>
         </tr>
         <tr>
             <td class="no">2</td>
             <td>Live your First Web Page on Git Hub</td>
-            <td class="practical-no">Practical-2</td>
+            <td class="practical-no"><a href="practical-2.html"> Practical-2</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
 
         </tr>
         <tr>
             <td class="no">3</td>
             <td>Create a web page showing a basic html structure using character Entitites and span Tag.</td>
-            <td class="practical-no">Practical-3</td>
+            <td class="practical-no"><a href="practical-3.html"> Practical-3</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
         <tr>
             <td class="no">4</td>
             <td>Create a website having list of all practical and their individual practical Page links</td>
-            <td class="practical-no">Practical-4</td>
+            <td class="practical-no"><a href="practical-4.html"> Practical-4</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
         <tr>
             <td class="no">5</td>
             <td>Create a Web-Page showing the use of Image-Map in the Web Applcation.</td>
-            <td class="practical-no">Practical-5</td>
+            <td class="practical-no"><a href="practical-5.html"> Practical-5</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
         <tr>
             <td class="no">6</td>
             <td>Create a Card Layout using CSS layout properties</td>
-            <td class="practical-no">Practical-6</td>
+            <td class="practical-no"><a href="practical-6.html"> Practical-6</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
         <tr>
             <td class="no">7</td>
             <td>Create a web page layout using Div Tag.</td>
-            <td class="practical-no">Practical-7</td>
+            <td class="practical-no"><a href="practical-7.html"> Practical-7</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
         <tr>
             <td class="no">8</td>
             <td>Create a web page having Fixed Navigation Bar with the given content.</td>
-            <td class="practical-no">Practical-8</td>
+            <td class="practical-no"><a href="practical-8.html"> Practical-8</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                 <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
         <tr>
             <td class="no">9</td>
             <td>Create a Responsive  Web Layout with Responsive Navigation Bar.</td>
-            <td class="practical-no">Practical-9</td>
+            <td class="practical-no"><a href="practical-9.html"> Practical-9</a></td>
             <td class="status">Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
+                
         </tr>
         <tr style="border-bottom: 2px solid #00334e;">
             <td class="no">10</td>
             <td>Create a Responsive Side-Bar Navigation Menu.</td>
-            <td class="practical-no">Practical-10</td>
+            <td class="practical-no"><a href="practical-10.html"> Practical-10</a></td>
             <td style="color: red;">Un-Checked</td>
             <td><acronym title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></acronym>
-                <i class="fa fa-trash" aria-hidden="true"></td>
+                <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
         </tr>
     </table>
 </body>
