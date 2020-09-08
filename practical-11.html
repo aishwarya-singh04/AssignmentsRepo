@@ -20,9 +20,9 @@
             margin: 10px auto;
             
             border: 2px solid #00334e;
-            border-radius: 10px;
-            border-collapse: separate;
-            border-spacing: 0;
+            border-radius: 6px;
+            /*border-collapse: separate;
+            border-spacing: 0;*/
             
             
         }
@@ -80,8 +80,10 @@
             
             /*border-spacing: 10px;*/
             /*border-spacing: 0px;*/
-            border-collapse: collapse;
-            padding: 8px;
+            /*border-collapse: collapse;*/
+            border-collapse: separate;
+            border-spacing: 0;
+            /*padding: 8px;*/
           
             
         }
@@ -104,6 +106,9 @@
         tr .no {
             width: 45px;
             text-align: center;
+        }
+        #last td{
+            border-bottom: 2px solid #00334e;
         }
     </style>
 </head>
@@ -193,7 +198,7 @@
                 <acronym title="Delete"><i class="fa fa-trash" aria-hidden="true"></td></acronym>
                 
         </tr>
-        <tr style="border-bottom: 2px solid #00334e;">
+        <tr style="border-bottom: 2px solid #00334e;" id="last">
             <td class="no">10</td>
             <td>Create a Responsive Side-Bar Navigation Menu.</td>
             <td class="practical-no"><a href="practical-10.html"> Practical-10</a></td>
