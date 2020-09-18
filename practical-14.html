@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Practical-14</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#ECF0F1 ;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+        .fone{
+            order: 1;
+        }
+        .ftwo{
+            order: 2;
+        }
+        .fthree{
+            order: 3;
+        }
+        form{
+            width: 25%;
+            height: 460px;
+            background-color: white;
+            margin: 20px 15px;
+            /*padding: 15px;*/
+            border-radius: 2px;
+            float: left;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            display: block; text-align: center;
+        }
+        .heading1{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            font-weight: bolder;
+            color: rgb(201, 22, 22); 
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        form .orange{
+            width: 25%;
+            background-color: #ee9617;
+            background-image: linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+            height: 120px;
+            color: white;
+            position: absolute;
+
+        }
+        .orange h2{
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        .icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .orange .fa{
+            font-size: 20px;
+            padding: 10px;
+        }
+        input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            border-bottom: 1px solid lightgrey;
+            background-color: white;
+            /*margin-left: 40px;*/
+            
+        }
+        /*Code to give padding in the input field*/
+        input:focus::-webkit-input-placeholder {
+            font-size: .75em;
+            position: relative;
+            top: -15px; 
+            transition: 0.2s ease-out;
+        }
+        input::-webkit-input-placeholder {
+            transition: 0.2s ease-in;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            height: 50px;
+            padding-bottom: 0px;
+            transition: 0.2s ease-in;
+        }
+
+        input[type="email"], input[type="password"] {
+            height: 50px;
+            transition: 0.2s ease-in;
+        }
+
+        input[type=email], input[type=password]{
+            width: 80%;
+            
+        }
+        .loginbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: grey;
+            color: white;
+            border: hidden;
+            border-radius: 25px;
+            margin-left: 36px;
+        }
+        .heading2{
+            color: #f34176;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        .grey{
+            width: 25%;
+            height: 96px;
+            background-color: darkgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: absolute;
+        }
+        .grey .fa{
+            font-size: 20px;
+            padding: 10px;
+        }
+        .signupbtn {
+            width: auto;
+            padding: 8px 28px;
+            background-color: #f34176;
+            color: white;
+            border: hidden;
+            border-radius: 25px;
+            margin-left: 36px;
+        }
+        .heading3{
+            color: gray;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        .icon-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-btn .fa{
+            color: #3498DB ;
+            font-size: 20px;
+        }
+        .icon-btn a {
+            width: 60px;
+            padding: 8px 20px;
+            background-color: white;
+            color: white;
+            border: hidden;
+            text-align: center;
+            margin: 5px 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 1px 3px 3px rgba(99, 148, 204, 0.527);
+
+            }
+        .signinbtn {
+            width: 80%;
+            padding: 8px 28px;
+            background-color: #0cbaba;
+            background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+            color: white;
+            border: hidden;
+            border-radius: 25px;
+        }
+        @media(max-width: 489px){
+            .container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        .fone{
+            order: 1;
+        }
+        .ftwo{
+            order: 2;
+        }
+        .fthree{
+            order: 3;
+        }
+        form{
+            width: 70%;
+            height: 460px;
+            background-color: white;
+            margin: 20px 15px;
+            /*padding: 15px;*/
+            border-radius: 2px;
+            float: left;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            display: block; text-align: center;
+        }
+        .heading1{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 36px;
+            font-weight: bolder;
+            color: rgb(201, 22, 22); 
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        form .orange{
+            width: 70%;
+            background-color: #ee9617;
+            background-image: linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+            height: 120px;
+            color: white;
+            position: absolute;
+
+        }
+        .orange h2{
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        .icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .orange .fa{
+            font-size: 20px;
+            padding: 10px;
+        }
+        input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            border-bottom: 1px solid lightgrey;
+            background-color: white;
+            /*margin-left: 40px;*/
+            
+        }
+        /*Code to give padding in the input field*/
+        input:focus::-webkit-input-placeholder {
+            font-size: .75em;
+            position: relative;
+            top: -15px; 
+            transition: 0.2s ease-out;
+        }
+        input::-webkit-input-placeholder {
+            transition: 0.2s ease-in;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            height: 50px;
+            padding-bottom: 0px;
+            transition: 0.2s ease-in;
+        }
+
+        input[type="email"], input[type="password"] {
+            height: 50px;
+            transition: 0.2s ease-in;
+        }
+
+        input[type=email], input[type=password]{
+            width: 80%;
+            
+        }
+        .loginbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: grey;
+            color: white;
+            border: hidden;
+            border-radius: 25px;
+            margin-left: 36px;
+        }
+        .heading2{
+            color: #f34176;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        .grey{
+            width: 70%;
+            height: 96px;
+            background-color: darkgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: absolute;
+        }
+        .grey .fa{
+            font-size: 20px;
+            padding: 10px;
+        }
+        .signupbtn {
+            width: auto;
+            padding: 8px 28px;
+            background-color: #f34176;
+            color: white;
+            border: hidden;
+            border-radius: 25px;
+            margin-left: 36px;
+        }
+        .heading3{
+            color: gray;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+        .icon-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-btn .fa{
+            color: #3498DB ;
+            font-size: 20px;
+        }
+        .icon-btn a {
+            width: 60px;
+            padding: 8px 20px;
+            background-color: white;
+            color: white;
+            border: hidden;
+            text-align: center;
+            margin: 5px 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 1px 3px 3px rgba(99, 148, 204, 0.527);
+
+            }
+        .signinbtn {
+            width: 80%;
+            padding: 8px 28px;
+            background-color: #0cbaba;
+            background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+            color: white;
+            border: hidden;
+            border-radius: 25px;
+        }
+        }
+        @media(max-width: 767px){
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading1">FORM TEMPLATES</h1>
+    <div class="container">
+        
+        <form action="data.html" method="GET" name="form1" target="_blank" class="fone">
+        <div class="orange">
+            <h2>Log In</h2>
+            <br>
+            <br>
+            <div class="icon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-google-plus"></i>
+            </div>
+        </div>
+        <div style="margin-top: 150px;">
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+        </div>
+            <br>
+        <div>
+            <input type="password" name="pwd" placeholder="Your Password " >
+        </div>
+        <br>
+        <div class="Forgot" style="float: right; margin-right: 36px; font-size: 12px;" >
+            <span class="psw" style="color:lightgrey;">Forgot <a href="#" style="color:grey;font-weight: bold; text-decoration: none;">password?</a></span>
+        </div>
+        <div class="content" style="margin-top: 100px; display: flex; align-items: center; justify-content: space-between;">
+            <button type="submit" class="loginbtn">Log In</button>
+            <span style="color:lightgrey; font-size: 12px; margin-right: 36px;">Don't have an account? <a style="color:grey;font-weight: bold; text-decoration: none;" href="#">Sign Up</a></span>
+          </div>
+        </form>
+        
+        
+        <form action="data.html" method="GET" name="form1" target="_blank" class="ftwo" >
+            <div>
+                <h2 class="heading2">Sign Up</h2>
+            </div>
+            <div style="margin-top: 60px;">
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+                <br>
+               
+            <div>
+                <input type="password" name="pwd" placeholder="Your Password " >
+            </div>
+            <br>
+        <div style="font-size: 12px; float: left; margin-left: 36px;">
+            <input type="checkbox" checked="checked" name="accept"><span style="color: grey;"> Accept the </span><a href="#" style="text-decoration: none; color: #2E86C1;">Terms and Conditions</a>
+        </div>
+        <div class="content" style="margin-top: 70px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between;">
+            <button type="submit" class="signupbtn">Sign Up</button>
+            <span style="color:lightgrey; font-size: 12px; margin-right: 36px;"> Have an account? <a style="color:#2E86C1;font-weight: bold; text-decoration: none;" href="#">Log In</a></span>
+        </div>
+        <div class="grey">
+            
+            <div class="icon">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-google-plus"></i>
+            </div>
+        </div>
+    </form>
+
+    
+    <form action="data.html" method="GET" name="form1" target="_blank" class="fthree" >
+        <div>
+            <h2 class="heading3">Sign In</h2>
+        </div>
+        <div style="margin-top: 60px;">
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+        </div>
+            <br>
+            <br>
+        <div>
+            <input type="password" name="pwd" placeholder="Your Password " >
+        </div>
+        <br>
+        <div class="Forgot" style="float: right; margin-right: 36px; font-size: 12px; color: #2E86C1;" >
+            <span class="psw">Forgot <a href="#" style="text-decoration: none; color:  #2E86C1 ;">password?</a></span>
+        </div>
+        <div class="content" style="margin-top: 42px; margin-bottom: 20px;">
+            <button type="submit" class="signinbtn">Sign In</button>
+            <br>
+            <br>
+            <p style="color: grey; font-size: 12px; text-align: center;"> Or Sign In with</p>
+        </div>
+        <br>
+        <div class="icon-btn">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+        </div>
+    </form>
+</div>    
+        
+        
+</body>
+</html>
