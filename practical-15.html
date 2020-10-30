@@ -67,37 +67,33 @@
         v.style.width = "80px";
         v.style.height = "80px";
         v.style.border= "none";
-        v.style.marginLeft = "25px";
-        v.style.marginRight = "25px";
+        v.style.marginLeft = "35px";
+        v.style.marginRight = "35px";
         v.innerHTML = "0";
-        v.style.fontSize = "55px";
+        v.style.fontSize = "65px";
         v.style.fontWeight ="bolder";
         v.style.color="rgb(200, 255, 0)";
         
-
+        dcr.disabled=true;
         var count = 0;
         dcr.onclick = function(){
             count= count-1;
             v.innerHTML= count;
-            dcr.style.opacity="1";
-            dcr.style.color="black";
-            dcr.style.border="1px solid black";
-            inr.style.opacity="0.6";
-            inr.style.color="darkgreen";
-            inr.style.border="4px solid darkgreen";
+            if(count<=0)
+            {
+                dcr.disabled=true;
+            }
+            
            
         }
         
         inr.onclick = function(){
             count= count+1;
             v.innerHTML= count;
-            inr.style.opacity="1";
-            inr.style.color="black";
-            inr.style.border="1px solid black";
-            dcr.style.opacity="0.6";
-            dcr.style.color="darkgreen";
-            dcr.style.border="4px solid darkgreen";
-            
+            if(count>0)
+            {
+                dcr.disabled=false;
+            }
             
         }
        
