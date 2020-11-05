@@ -1,0 +1,92 @@
+/*-----------Initial Phase CSS-------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(120deg, skyblue, blue);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+h1, form{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    padding: 10px;
+    border: none;
+    font-size: 24px;
+    background: white;
+    outline: none;
+}
+
+form button{
+    color: blue;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+form button:hover{
+    color: white;
+    background-color: skyblue;
+}
+
+/*--------------------New List Container--------------------*/
+
+.todo-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list
+{
+    list-style: none;
+    min-width: 25%;
+}
+
+.todo{
+    background-color: #fff;
+    color: black;
+    margin: 8px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.todo-item{
+    flex: 1;
+    margin: 0 8px;
+}
+
+.check-btn, .delete-btn{
+    padding: 16px;
+    font-size: 16px;
+    background-color: rgb(37, 134, 37);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete-btn{
+    background-color: rgb(219, 20, 126);
+}
+
+.fa-check, .fa-trash{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
