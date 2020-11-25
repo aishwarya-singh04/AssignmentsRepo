@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: darkgrey;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 360px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    /*to hide everything outside the div container*/
+    /*this will help in hiding the shadow on top and the extra progress bar*/
+    overflow: hidden;
+    
+}
+.container form{
+    width: 280px;
+    position: absolute;
+    /*Position of form in container*/
+    left: 40px;
+    top: 80px;
+    transition: 0.5s;
+}
+form h3{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #777;
+}
+form input{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+}
+.btn-box{
+    margin: 30px auto;
+    text-align: center;
+}
+form button{
+    width: 120px;
+    height: 35px;
+    background-color: crimson;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+
+}
+#form2{
+    left: 450px;
+}
+#form3{
+    left: 450px;
+}
+.step-row{
+    width: 360px;
+    height: 40px;
+    box-shadow: 0px -1px 5px -1px #000;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.step-col{
+    width: 120px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+#progress{
+    width: 120px;
+    height: 100%;
+    position: absolute;
+    background-color: crimson;
+    transition: 1s;
+}
+#progress::after{
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    right: -20px;
+    border-left: 20px solid crimson;
+    
+}
